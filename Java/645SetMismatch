@@ -1,0 +1,18 @@
+class Solution {
+    public int[] findErrorNums(int[] nums) {
+        int sum = 0;
+        int d = 0;
+        int l = nums.length;
+        Set<Integer> s = new HashSet<>();
+        for(int i: nums){
+           if(s.add(i)){
+               sum +=i;
+               
+           }
+            else{
+                d = i;
+            }
+        }
+        return new int[] {d,((l*(l+1))/2)-sum};
+    }
+}
